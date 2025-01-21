@@ -1,31 +1,40 @@
-/* Estilos base */
+/* Estilo do header */
 header {
-    margin-top: 60px;
-    margin-bottom: 70px;
+    background-color: #ffffff;
+    padding: 15px 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 header .container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
 }
 
+header .logo img {
+    max-width: 180px;
+}
+
 header nav ul {
     display: flex;
-    align-items: center;
     gap: 30px;
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 header nav ul li a {
-    color: var(--dark);
-    font-family: var(--font);
-    font-size: 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
     padding: 10px;
-    transition: color 0.4s ease-in-out;
+    transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
@@ -34,74 +43,75 @@ header nav ul li a:hover {
 
 header nav ul li a:focus {
     outline: 2px solid var(--green);
-    outline-offset: 2px;
 }
 
-/* Botão do menu mobile */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    width: 30px;
-    height: 30px;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
 
-.menu-toggle span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: var(--dark);
-    transition: all 0.3s ease-in-out;
-}
-
-/* Menu mobile */
-header nav {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 100%;
-    background: var(--light);
-    transform: translateY(-200%);
-    transition: transform 0.3s ease-in-out;
-}
-
-header nav ul.menu {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-    padding: 20px 0;
-}
-
-/* Quando o menu é aberto */
-header nav.open {
-    transform: translateY(0);
-}
-
-/* Responsividade */
+/* Estilo para o menu mobile */
 @media (max-width: 768px) {
-
-    header{
-        margin-bottom: 40px;
-    }
-    .menu-toggle {
-        display: flex;
+    header .logo img {
+        max-width: 150px;
     }
 
     header nav ul {
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: #ffffff;
+        width: 250px;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 60px;
+        box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+
+    header nav ul.active {
+        transform: translateX(0);
+    }
+
+    header .menu-toggle {
+        display: block;
+        background: transparent;
+        border: none;
+        position: absolute;
+        top: 0px;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    header .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 5px 0;
+    }
+
+    header nav ul li {
+        margin: 20px 0;
+    }
+
+    header .btn {
+        margin-top: 20px;
+    }
+
+    /* Estilo do botão de fechar */
+    header .menu-close {
         display: none;
+        background-color: transparent;
+        border: none;
+        font-size: 30px;
+        color: #333;
+        position: absolute;
+        top: 0px;
+        right: 20px;
+        cursor: pointer;
     }
 
-    header nav.open ul {
-        display: flex;
-    }
-
-    header .container {
-        flex-wrap: wrap;
+    header nav ul.active + .menu-close {
+        display: block;
     }
 }
