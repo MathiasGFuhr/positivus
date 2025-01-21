@@ -1,0 +1,20 @@
+:root{
+    --green: #B9FF66;
+    --dark: #191A23;
+    --light: #F3F3F3;
+
+    --Font: 'Space Grotesk', sans-serif;
+}
+
+body{
+    background-color: #fff;
+    color: var(--dark);
+    font-family: var(--Font);
+    font-weight: 400;
+}
+
+.container{
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 20px;
+}

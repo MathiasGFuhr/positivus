@@ -1,0 +1,26 @@
+.company-logo{
+    margin-top: 70px;
+    margin-bottom: 140px;
+}
+
+.company-logo ul{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.company-logo ul li{
+    transition: transform 0.4s ease-in-out;
+}
+
+.company-logo ul li:hover{
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px){
+.company-logo{
+    margin-bottom: 80px;
+}
+    
+}

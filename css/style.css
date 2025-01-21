@@ -1,0 +1,137 @@
+@import url('reset.css');
+@import url('global.css');
+@import url('header.css');
+@import url('main.css');
+@import url('company-logo.css');
+@import url('services.css');
+
+
+
+/* Estilo base do botão */
+.btn {
+    border-radius: 14px;
+    background: var(--dark);
+    border: 1px solid var(--dark);
+    padding: 20px 35px;
+    display: inline-block;
+    color: var(--light);
+    text-align: center;
+    font-size: 20px;
+    line-height: 28px;
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.btn-primary {
+    background-color: transparent;
+    color: var(--dark);
+    border: 1px solid var(--dark);
+}
+
+/* Hover do botão primário */
+.btn-primary:hover {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+/* Estilo do botão secundário */
+.btn-secondary {
+    background-color: var(--dark);
+    color: var(--light);
+    border: 1px solid var(--dark);
+}
+
+/* Hover do botão secundário */
+.btn-secondary:hover {
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+
+.highlighted-title {
+    font-size: 40px;
+    font-weight: 500;
+    background-color: var(--green);
+    padding: 0 7px;
+    border-radius: 7px;
+}
+
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding: 40px;
+}
+
+.card {
+    padding: 50px;
+    border-radius: 45px;
+    border: 1px solid var(--Dark, #191A23);
+    box-shadow: 0px 5px 0px 0px #191A23;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.card .card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 93px;
+}
+
+.card-text .card-title {
+    font-size: 30px;
+    font-weight: 500;
+    padding: 0 7px;
+    border-radius: 7px;
+}
+
+.card-text a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    font-size: 20px;
+    color: var(--black, #000);
+}
+
+.card-text img{
+    transition: transform 0.3s ease; 
+
+}
+
+.card-text img:hover {
+    transform: scale(1.1) translate(10px, -8px); /* Move para cima (-Y) e para a direita (+X) */
+  }
+  
+
+.cards-container .green {
+    background-color: var(--green)
+}
+
+.cards-container .light{
+    background: var(--light);
+}
+
+.cards-container .dark{
+    background-color: var(--dark);
+}
+
+.cards-container .dark a{
+    color: var(--light);
+}
+
+@media (max-width: 770px){
+    .cards-container{
+        grid-template-columns: 1fr;
+    }
+
+    .cards-container .card{
+        flex-direction: column;
+    }
+
+    .card .card-text{
+        gap: 25px;
+    }
+    
+}
